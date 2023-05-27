@@ -1,0 +1,56 @@
+.about {
+    width: 100vw;
+    height: 100vh;
+}
+
+.about .box {
+    display: flex;
+    width: 100%;
+    background: rgba(7, 47, 57, 0.5);
+    border-radius: 31px;
+    color: #fff;
+    padding: 40px;
+    margin-top: 300px;
+}
+
+.about form {
+    width: 50%;
+    display: flex;
+    flex-direction: column;
+}
+
+.about form h1 {
+    text-align: center;
+}
+
+.about form .group {
+    display: flex;
+    flex-direction: column;
+    justify-content: start;
+    margin-top: 10px;
+}
+
+.about form .group input {
+    padding: 5px;
+    border: 0;
+    border-bottom: 2px solid black;
+    background: none;
+    margin-bottom: 10px;
+}
+
+.about form textarea {
+    padding: 20px;
+    background-color: #AED5D8;
+    border-radius: 20px;
+}
+
+.about .info {
+    width: 50%;
+    padding-left: 40px;
+    margin-left: 20px;
+    border-left: 3px solid white;
+}
+
+.about .info h4 {
+    margin-bottom: 30px;
+}

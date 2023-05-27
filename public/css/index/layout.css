@@ -1,0 +1,310 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;700&display=swap');
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+    /* border: 1px solid black; */
+}
+body{
+    overflow-x: hidden;
+}
+.container{
+    padding: 3% 5%;
+}
+
+.d-none{
+    display: none;
+}
+.d-flex{
+    display: flex;
+}
+.swiper {
+    width: 100%;
+    height: max-content;
+}
+
+
+
+/* heading */
+.heading{
+    font-size: 25px;
+    color: #000;
+    font-weight: bold;
+    text-align: center;
+}
+.heading1{
+    font-size: 20px;
+    color: #072F39;
+    font-weight: bold;
+}
+.heading2{
+    font-size: 18px;
+    color: #072F39;
+    font-weight: bold;
+}
+.sub1{
+    text-align: center;
+}
+.sub2{
+    font-size: 12px;
+    display: flex;
+    width: 100%;
+    text-align: center;
+}
+
+
+/* Icon */
+i{
+    display: flex;
+    width: 25px;
+    height: 25px;
+}
+i.icon_user{
+    background: url(../css/img/user.png);
+    margin-right: 10px;
+}
+i.icon_user2{
+    background: url(../css/img/user2.png);
+    margin-right: 10px;
+}
+i.icon_logout{
+    background: url(../css/img/logout.png);
+    margin-right: 10px;
+}
+i.icon_ig{
+    background: url(../css/img/ig.png);
+    margin-right: 10px;
+}
+i.icon_fb{
+    background: url(../css/img/fb.png);
+    margin-right: 10px;
+}
+i.icon_jam{
+    background: url(../market/clock.png);
+    margin-right: 10px;
+     background-position: center;
+    background-repeat: no-repeat;
+}
+i.icon_jalan{
+    background: url(../market/marker.png);
+    margin-right: 10px;
+    background-position: center;
+    background-repeat: no-repeat;
+    width: 30px;
+}
+i.icon_ac{
+    background: url(../css/img/ac.png);
+    margin-right: 10px;
+    background-position: center;
+    background-size: contain;
+}
+i.icon_meja{
+    background: url(../css/img/meja.png);
+    margin-right: 10px;
+    background-position: center;
+    background-size: contain;
+    background-repeat: no-repeat;
+}
+i.icon_bathtub{
+    background: url(../css/img/bathtub.png);
+    margin-right: 10px;
+    background-position: center;
+    background-size: contain;
+    background-repeat: no-repeat;
+    width: 40px;
+}
+i.icon_bed{
+    background: url(../css/img/bed.png);
+    margin-right: 10px;
+    background-position: center;
+    background-size: contain;
+    background-repeat: no-repeat;
+}
+i.icon_lemari{
+    background: url(../css/img/lemari.png);
+    margin-right: 10px;
+    background-position: center;
+    background-size: contain;
+    background-repeat: no-repeat;
+}
+i.icon_toilet{
+    background: url(../css/img/toilet.png);
+    margin-right: 10px;
+    background-position: center;
+    background-size: contain;
+    background-repeat: no-repeat;
+}
+i.icon_search{
+    background: url(../css/img/search.png);
+    margin-right: 10px;
+    background-position: center;
+    background-size: contain;
+    background-repeat: no-repeat;
+    position: absolute;
+    left: 10px;
+    }
+i.icon_star{
+    background: url(../food-and-drink/star.png);
+    margin-right: 10px;
+    background-position: center;
+    background-size: contain;
+    background-repeat: no-repeat;
+    }   
+
+/* Color */
+.c-primary{
+    background-color: #072F39;
+}
+.c-white{
+    color: #fff;
+}
+.c-gradient{
+    background: linear-gradient(166.23deg, #062E38 15.08%, rgba(59, 201, 209, 0) 123.82%);
+}
+
+/* Search */
+.search{
+    display: flex;
+    padding: 20px;
+    margin-bottom: 40px;
+}
+.search .group{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+}
+.search .group input{
+    width: 350px;
+    padding: 8px 10px;
+    padding-left: 40px;
+    border-radius: 10px;
+    border: 0;
+    background-color: #D9D9D9;
+}
+
+/* Navbar */
+nav{
+    display: flex;
+    width: 100%;
+    font-size: 14px;
+}
+nav .logo{
+    width: 20%;
+}
+nav ul{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0px 100px;
+    width: 60%;
+}
+nav ul li{
+    list-style: none;
+}
+nav ul li a{
+    text-decoration: none;
+    color: #fff;
+}
+nav .profile {
+    display: flex;
+    flex-direction: column;
+    width: 20%;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+}
+nav .profile span{
+    display: flex;
+    color: #fff;
+    cursor:pointer;
+}
+
+nav .profile .m-profile{
+    flex-direction: column;
+    position: absolute;
+    top: 55px;
+    background-color: #fff;
+    border-radius: 5px;
+    padding: 20px;
+}
+nav .profile .m-profile li{
+    width: 120px;
+    text-align: center;
+    margin-top: 5px;
+}
+nav .profile .m-profile li a{
+    text-decoration: none;
+    color: #000;
+    display: flex;
+}
+
+nav ul .oth{
+    display: flex;
+    flex-direction: column;
+    position: relative;
+}
+nav ul .oth span{
+    color: #fff;
+    cursor: pointer;
+}
+nav ul .m-oth{
+    /* display: flex; */
+    flex-direction: column;
+    position: absolute;
+    top:45px;
+    left: -45px;
+    padding: 10px;
+    background-color: #fff;
+    width: 140px;
+    border-radius: 10px;
+}
+nav ul .m-oth li{
+    text-align: center;
+    margin-top:5px;
+}
+nav ul .m-oth li a{
+    color: #000;
+
+}
+
+
+
+/* footer */
+footer{
+    display: flex;
+    justify-content: space-between;
+    color: #fff;
+    width: 100%;
+}
+footer .f-left{
+    width: 350px;
+    display: flex;
+    flex-direction: column;
+}
+footer .f-left img{
+    width: 60%;
+}
+footer .f-right{
+    margin-right: 100px;
+    width: 350px;
+    display: flex;
+    justify-content: space-around;
+}
+footer .f-right ul li{
+    list-style: none;
+}
+footer .f-right ul li a{
+    text-decoration: none;
+    color: #fff;
+}
+footer .f-right ul li.sosmed{
+    display: flex;
+    margin-top: 5px;
+}
+.cp{
+    color: #fff;
+    padding: 10px 20px;
+    text-align: right;
+}

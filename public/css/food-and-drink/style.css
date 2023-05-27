@@ -1,0 +1,177 @@
+/* Banner */
+.banner {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 80px 0px;
+}
+#page-detail {
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+
+#page-detail .banner {
+    padding-top: 10%;
+    padding-bottom: 10%;
+}
+
+/* food and drink */
+.food {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    background-position: center;
+    background-size: cover;
+}
+
+.food .search input {
+    width: 500px;
+}
+
+.food .heading1 {
+    font-size: 24px;
+    width: 200px;
+    text-align: center;
+}
+
+.food .c-box {
+    width: 100%;
+    margin-top: 30px;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+    gap: 10px;
+    justify-content: center;
+    align-items: center;
+}
+
+.food .c-box .box {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+.food .c-box .box .img {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    background-color: #D9D9D9;
+    padding: 20px;
+    border-radius: 20px;
+    width: 150px;
+    height: 150px;
+}
+
+.food .c-box .box .title {
+    font-weight: bold;
+    margin-top: 10px;
+}
+
+.food .c-box2 {
+    width: 100%;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
+    justify-content: center;
+    align-items: center;
+    gap: 75px;
+    padding: 20px 30px;
+}
+
+.food .c-box2 .box {
+    background-color: #FFC26A;
+    width: 230px;
+    height: 320px;
+    border-radius: 20px;
+    padding: 20px;
+}
+
+.food .c-box2 .box img {
+    width: 100%;
+    height: 180px;
+    margin-left: -90px;
+}
+
+.food .c-box2 .box .title {
+    font-weight: bold;
+    font-size: 20px;
+}
+
+.food .c-box2 .btn {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 20px;
+}
+
+.food .c-box2 .btn a {
+    text-decoration: none;
+    color: #000;
+}
+
+.food .c-box2 .btn .swipe {
+    background-color: #419F7D;
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-weight: bold;
+    font-size: 20px;
+    color: #fff;
+}
+
+.food .rekomend {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: start;
+    padding-bottom: 100px;
+    padding-top: 100px;
+}
+
+.food .rekomed .swiper {
+    margin-bottom: 20px;
+}
+
+
+.food .swiper .swiper-slide {
+    background-color: #072F39;
+    width: 100px;
+    height: 300px;
+    text-decoration: none;
+    display: flex;
+    flex-direction: column;
+    border-radius: 30px;
+    color: #fff;
+    position: relative;
+}
+
+.food .swiper .swiper-slide .text {
+    padding: 20px;
+}
+
+.food .swiper .swiper-slide img {
+    width: 100%;
+    border-radius: 20px 20px 0px 0px;
+    height: 200px;
+}
+
+.food .swiper .swiper-slide .price {
+    display: flex;
+    font-size: 16px;
+    justify-content: space-between;
+}
+
+.food .swiper .swiper-slide .rating {
+    position: absolute;
+    display: flex;
+    background-color: #072F39;
+    padding: 10px;
+    border-radius: 20px;
+    left: 10px;
+    top: 10px;
+}

@@ -1,0 +1,82 @@
+.wellcome {
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+}
+
+.wellcome nav {
+    display: flex;
+    justify-content: space-between;
+}
+
+.wellcome .banner {
+    display: flex;
+    width: 100%;
+}
+
+.wellcome .banner .box {
+    display: flex;
+    flex-direction: column;
+    background: rgba(217, 217, 217, 0.5);
+    border-radius: 0px 41px 41px 0px;
+    padding: 30px;
+    width: 50%;
+    height: 70vh;
+    padding-left: 150px;
+}
+
+.wellcome .banner .img {
+    width: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.wellcome .banner .img img {
+    width: 70%;
+    height: 70vh;
+}
+
+.wellcome .banner .box h4 {
+    font-size: 20px;
+    color: #fff;
+    margin-bottom: 40px;
+    margin-top: 20px;
+}
+
+.wellcome .banner .box h1 {
+    font-size: 30px;
+    margin-bottom: 40px;
+}
+
+.wellcome .banner .box h5 {
+    font-size: 16px;
+    margin-bottom: 40px;
+    color: #fff;
+}
+
+.wellcome .banner .box .btn {
+    display: flex;
+}
+
+.wellcome .banner .box .btn a {
+    width: 150px;
+    padding: 8px;
+    border-radius: 10px;
+    margin-right: 20px;
+    display: flex;
+    justify-content: center;
+    text-decoration: none;
+    align-items: center;
+}
+
+.wellcome .banner .box .btn a.btn-primary {
+    background-color: #072F39;
+    color: #fff;
+}
+
+.wellcome .banner .box .btn a.btn-outline {
+    border: 2px solid #072F39;
+    color: #072F39;
+}

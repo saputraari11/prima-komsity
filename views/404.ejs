@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>404</title>
+    <link rel="stylesheet" href="css/index/layout.css">
+    <style>
+        .nf {
+            width: 100vw;
+            height: 100vh;
+        }
+
+        .nf .text {
+            display: flex;
+            flex-direction: column;
+            width: 40vw;
+            padding: 40px;
+        }
+
+        .nf h1 {
+            font-size: 80px;
+            color: #fff;
+        }
+
+        .nf .text a {
+            text-decoration: none;
+            color: #fff;
+            background-color: #072F39;
+            padding: 5px 20px;
+            width: max-content;
+            border-radius: 10px;
+            margin-top: 20px;
+        }
+
+        .group {
+            display: flex;
+            position: relative;
+        }
+    </style>
+</head>
+
+<body>
+    <header class="container c-gradient nf">
+        <nav>
+            <a href="#" class="logo">
+                <img src="img/index/logo.png" alt="">
+            </a>
+            <ul>
+                <li><a href="home">Home</a></li>
+                <li><a href="fad">Food&Drink</a></li>
+                <li><a href="market">Market</a></li>
+                <li><a href="boarding-house">Boarding House</a></li>
+                <li><a href="place">Telyu Place</a></li>
+                <li class="oth">
+                    <span>Other</span>
+                    <ul class="m-oth d-none">
+                        <li><a href="atm">ATM</a></li>
+                        <li><a href="worship">Worship Place</a></li>
+                        <li><a href="service">Service</a></li>
+                        <li><a href="about">About Us</a></li>
+                    </ul>
+                </li>
+            </ul>
+            <div class="profile">
+                <span>
+                    <i class="icon_user"></i>
+                    My Account
+                </span>
+                <ul class="d-none m-profile">
+                    <li><a href="account"><i class="icon_user2"></i>My Profile</a></li>
+                    <li><a href="/logout?type=DELETE" data-method="delete"><i class="icon_logout"></i>Logout</a></li>
+                </ul>
+            </div>
+        </nav>
+        <div class="text">
+            <h1>
+                SOMETHING WENT WRONG
+            </h1>
+            <a href="">Try Again</a>
+        </div>
+    </header>
+</body>
+
+</html>
