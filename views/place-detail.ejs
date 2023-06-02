@@ -2,35 +2,40 @@
 <html lang="en">
 
 <head>
+    <style>
+        .images-telyu {
+            background-image: url('<%= url + place.home %>');
+        }
+    </style>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Telyu Place</title>
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.css" />
-    <link rel="stylesheet" href="css/index/layout.css">
-    <link rel="stylesheet" href="css/place-detail/style.css">
+    <link rel="stylesheet" href="/css/index/layout.css">
+    <link rel="stylesheet" href="/css/place-detail/style.css">
 </head>
 
 <body>
-    <header class="container" style="background-image: url(css/place-detail/banner.png);" id="page-detail">
+    <header class="container images-telyu" id="page-detail">
         <!-- Navbar -->
         <nav>
             <a href="#" class="logo">
-                <img src="css/img/logo.png" alt="">
+                <img src="/img/logo.png" alt="">
             </a>
             <ul>
-                <li><a href="">Home</a></li>
-                <li><a href="">Food&Drink</a></li>
-                <li><a href="">Market</a></li>
-                <li><a href="">Boarding House</a></li>
-                <li><a href="">Telyu Place</a></li>
+                <li><a href="/dashboard">Home</a></li>
+                <li><a href="/fad">Food&Drink</a></li>
+                <li><a href="/market">Market</a></li>
+                <li><a href="/boarding-house">Boarding House</a></li>
+                <li><a href="/place">Telyu Place</a></li>
                 <li class="oth">
                     <span>Other</span>
                     <ul class="m-oth d-none">
-                        <li><a href="">ATM</a></li>
-                        <li><a href="">Worship Place</a></li>
-                        <li><a href="">Service</a></li>
-                        <li><a href="">About Us</a></li>
+                        <li><a href="/atm">ATM</a></li>
+                        <li><a href="/worship">Worship Place</a></li>
+                        <li><a href="/service">Service</a></li>
+                        <li><a href="/about">About Us</a></li>
                     </ul>
                 </li>
             </ul>
@@ -40,8 +45,8 @@
                     My Account
                 </span>
                 <ul class="d-none m-profile">
-                    <li><a href=""><i class="icon_user2"></i>My Profile</a></li>
-                    <li><a href=""><i class="icon_logout"></i>Logout</a></li>
+                    <li><a href="account"><i class="icon_user2"></i>My Profile</a></li>
+                    <li><a href="/logout?type=DELETE" data-method="delete"><i class="icon_logout"></i>Logout</a></li>
                 </ul>
             </div>
         </nav>
@@ -52,41 +57,33 @@
     </header>
 
     <!-- place -->
-    <div class="title-place">Fakultas Ilmu Terapan (FIT)</div>
+    <div class="title-place"><%= place.names %> (<%= place.nickname %>)</div>
     <section class="container place-detail">
         <div class="swiper">
             <div class="swiper-wrapper">
-                <div class="swiper-slide">
-                    <img src="css/place-detail/img1.png" alt="">
-                </div>
-                <div class="swiper-slide">
-                    <img src="css/place-detail/img2.png" alt="">
-                </div>
-                <div class="swiper-slide">
-                    <img src="css/place-detail/img3.png" alt="">
-                </div>
-                <div class="swiper-slide">
-                    <img src="css/place-detail/img4.png" alt="">
-                </div>
+                    <% place.images.forEach((image) => {%>
+                    <div class="swiper-slide">
+                         <img src="<%=url+image%>" alt="">
+                    </div>
+                    <% }) %>
             <div class="swiper-pagination"></div>
             <div class="swiper-button-prev"></div>
             <div class="swiper-button-next"></div>
         </div>
 
         <div class="galery">
-            <figure style="background-image: url(css/place-detail/img1.png);"></figure>
-            <figure style="background-image: url(css/place-detail/img2.png);"></figure>
-            <figure style="background-image: url(css/place-detail/img3.png);"></figure>
-            <figure style="background-image: url(css/place-detail/img4.png);"></figure>
+            <% place.images.forEach((image) => {%>
+            <figure style="background-image: url('<%= url %><%= image %>');"></figure>
+            <% }) %>
         </div>
-        <div class="heading1">Galery FIT</div>
+        <div class="heading1">Galery <%= place.nickname %></div>
     </section>
 
 
     <!-- footer -->
     <footer class="container c-primary">
         <div class="f-left">
-            <img src="css/img/logo-footer.png" alt="" class="logo-footer">
+            <img src="/img/index/logo-footer.png" alt="" class="logo-footer">
             <p>
                 Jl.Telekomunasi 1
                 terusan buah batu

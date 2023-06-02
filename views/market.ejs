@@ -57,72 +57,19 @@
             happy shopping!!</div>
         <div class="swiper">
             <div class="swiper-wrapper">
+            <% markets.forEach((market) => {%>
                 <div class="swiper-slide">
-                    <img src="css/market/alfa.png" alt="">
+                    <img src="<%= market.images %>" alt="">
                     <div class="text">
-                        <div class="title">Alfamart</div>
-                        <div class="sub2"><i class="icon_jam"></i> 07:00 - 22:00 WIB</div>
-                        <div class="sub2"><i class="icon_jalan"></i> Ds, Jl.Sukabirus, Rt 03, Rw 15, Desa Citeureup Kec. Dayeuh Kolot Bandung</div>
+                        <div class="title"><%= market.names %></div>
+                        <div class="sub2"><i class="icon_jam"></i> <%= market.time %></div>
+                        <div class="sub2"><i class="icon_jalan"></i> <%= market.location %></div>
                     </div>
                     <div class="btn">
-                        <a href="">View Detail</a>
+                        <a href="<%= market.maps %>">View Detail</a>
                     </div>
                 </div>
-                <div class="swiper-slide">
-                    <img src="css/market/alfa.png" alt="">
-                    <div class="text">
-                        <div class="title">Alfamart</div>
-                        <div class="sub2"><i class="icon_jam"></i> 07:00 - 22:00 WIB</div>
-                        <div class="sub2"><i class="icon_jalan"></i> Ds, Jl.Sukabirus, Rt 03, Rw 15, Desa Citeureup Kec. Dayeuh Kolot Bandung</div>
-                    </div>
-                    <div class="btn">
-                        <a href="">View Detail</a>
-                    </div>
-                </div>
-                <div class="swiper-slide">
-                    <img src="css/market/alfa.png" alt="">
-                    <div class="text">
-                        <div class="title">Alfamart</div>
-                        <div class="sub2"><i class="icon_jam"></i> 07:00 - 22:00 WIB</div>
-                        <div class="sub2"><i class="icon_jalan"></i> Ds, Jl.Sukabirus, Rt 03, Rw 15, Desa Citeureup Kec. Dayeuh Kolot Bandung</div>
-                    </div>
-                    <div class="btn">
-                        <a href="">View Detail</a>
-                    </div>
-                </div>
-                <div class="swiper-slide">
-                    <img src="css/market/alfa.png" alt="">
-                    <div class="text">
-                        <div class="title">Alfamart</div>
-                        <div class="sub2"><i class="icon_jam"></i> 07:00 - 22:00 WIB</div>
-                        <div class="sub2"><i class="icon_jalan"></i> Ds, Jl.Sukabirus, Rt 03, Rw 15, Desa Citeureup Kec. Dayeuh Kolot Bandung</div>
-                    </div>
-                    <div class="btn">
-                        <a href="">View Detail</a>
-                    </div>
-                </div>
-                <div class="swiper-slide">
-                    <img src="css/market/alfa.png" alt="">
-                    <div class="text">
-                        <div class="title">Alfamart</div>
-                        <div class="sub2"><i class="icon_jam"></i> 07:00 - 22:00 WIB</div>
-                        <div class="sub2"><i class="icon_jalan"></i> Ds, Jl.Sukabirus, Rt 03, Rw 15, Desa Citeureup Kec. Dayeuh Kolot Bandung</div>
-                    </div>
-                    <div class="btn">
-                        <a href="">View Detail</a>
-                    </div>
-                </div>
-                <div class="swiper-slide">
-                    <img src="css/market/alfa.png" alt="">
-                    <div class="text">
-                        <div class="title">Alfamart</div>
-                        <div class="sub2"><i class="icon_jam"></i> 07:00 - 22:00 WIB</div>
-                        <div class="sub2"><i class="icon_jalan"></i> Ds, Jl.Sukabirus, Rt 03, Rw 15, Desa Citeureup Kec. Dayeuh Kolot Bandung</div>
-                    </div>
-                    <div class="btn">
-                        <a href="">View Detail</a>
-                    </div>
-                </div>
+            <% }) %>
             </div>
             <!-- If we need pagination -->
             <div class="swiper-pagination"></div>

@@ -63,12 +63,12 @@
             <div class="swiper-wrapper">
             <% boardings.forEach((boarding) => {%>
                 <div class="swiper-slide">
-                        <img src="<%= boarding.urlImg %>" alt="">
+                        <img src="<%= boarding.urlImg%>" alt="">
                         <div class="text">
                             <div class="title"><%= boarding.name %></div>
                         
                             <p><%= boarding.description %></p>
-                            <a href="<%= boarding.urlDetail %>">View Detail</a>
+                            <a href="/detail-boarding/<%- boarding.id%>">View Detail</a>
                         </div>
                 </div>
             <% }) %>

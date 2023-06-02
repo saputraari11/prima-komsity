@@ -112,124 +112,46 @@
                 choose food and drink acoording to your tongue
             </div>
             <div class="c-box2">
+            <% randomFood.forEach((foodId) => {%>
                 <div class="box">
-                    <img src="img/food-and-drink/makanan1.png" alt="">
+                    <img src="<%= url+data[foodId].id+'/'+data[foodId].image %>" alt="">
                     <div class="title">
-                        Noodles
+                        <%= data[foodId].name %>
                     </div>
                     <div class="price">
-                        Rp. 14.000
+                        <%= data[foodId].price %>
                     </div>
                     <div class="btn">
                         <a href="food-detail.html">See Detail</a>
                         <div class="swipe">></div>
                     </div>
                 </div>
-                <div class="box">
-                    <img src="img/food-and-drink/makanan1.png" alt="">
-                    <div class="title">
-                        Noodles
-                    </div>
-                    <div class="price">
-                        Rp. 14.000
-                    </div>
-                    <div class="btn">
-                        <a href="">See Detail</a>
-                        <div class="swipe">></div>
-                    </div>
-                </div>
-                <div class="box">
-                    <img src="img/food-and-drink/makanan1.png" alt="">
-                    <div class="title">
-                        Noodles
-                    </div>
-                    <div class="price">
-                        Rp. 14.000
-                    </div>
-                    <div class="btn">
-                        <a href="">See Detail</a>
-                        <div class="swipe">></div>
-                    </div>
-                </div>
-                <div class="box">
-                    <img src="img/food-and-drink/makanan1.png" alt="">
-                    <div class="title">
-                        Noodles
-                    </div>
-                    <div class="price">
-                        Rp. 14.000
-                    </div>
-                    <div class="btn">
-                        <a href="">See Detail</a>
-                        <div class="swipe">></div>
-                    </div>
-                </div>
+            <% }) %>
             </div>
             <div class="rekomend">
                 <div class="heading1">Rekomended</div>
                 <div class="swiper" style="margin-top: 40px;">
-                    <div class="swiper-wrapper">
+                    <% randomRates.forEach((rateId) => {%>
+                       <div class="swiper-wrapper">
                         <a href="" class="swiper-slide">
-                            <img src="img/food-and-drink/ayam.png" alt="">
+                            <img src="<%= url+ratings[rateId].id+'/'+ratings[rateId].image %>" alt="">
                            <div class="text">
-                            <div class="heading2 c-white">Ayam Goreng</div>
+                            <div class="heading2 c-white"><%= ratings[rateId].name %></div>
                             <div class="price">
-                                <p>$1.62</p>
-                                <p>-2min</p>
+                                <p><%= ratings[rateId].price %></p>
+                                <p><%= ratings[rateId].time_serve %></p>
                             </div>
                            </div>
                             <div class="rating">
                                 <i class="icon_star"></i>
-                                4.7
+                                <%= ratings[rateId].rating %>
                             </div>
                         </a>
-                        <a href="" class="swiper-slide">
-                            <img src="img/food-and-drink/ayam.png" alt="">
-                           <div class="text">
-                            <div class="heading2 c-white">Ayam Goreng2</div>
-                            <div class="price">
-                                <p>$1.62</p>
-                                <p>-2min</p>
-                            </div>
-                           </div>
-                            <div class="rating">
-                                <i class="icon_star"></i>
-                                4.7
-                            </div>
-                        </a>
-                        <a href="" class="swiper-slide">
-                            <img src="img/food-and-drink/ayam.png" alt="">
-                           <div class="text">
-                            <div class="heading2 c-white">Ayam Goreng</div>
-                            <div class="price">
-                                <p>$1.62</p>
-                                <p>-2min</p>
-                            </div>
-                           </div>
-                            <div class="rating">
-                                <i class="icon_star"></i>
-                                4.7
-                            </div>
-                        </a>
-                        <a href="" class="swiper-slide">
-                            <img src="img/food-and-drink/ayam.png" alt="">
-                           <div class="text">
-                            <div class="heading2 c-white">Ayam Goreng</div>
-                            <div class="price">
-                                <p>$1.62</p>
-                                <p>-2min</p>
-                            </div>
-                           </div>
-                            <div class="rating">
-                                <i class="icon_star"></i>
-                                4.7
-                            </div>
-                        </a>
-                    </div>
+                        </div>
+                    <% }) %>
                     <div class="swiper-pagination"></div>
                     <div class="swiper-button-prev"></div>
                     <div class="swiper-button-next"></div>
-        
                 </div>
             </div>
     </section>

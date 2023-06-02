@@ -6,8 +6,8 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Boarding House</title>
-    <link rel="stylesheet" href="../css/index/layout.css">
-    <link rel="stylesheet" href="../css/detail-boarding/layout.css">
+    <link rel="stylesheet" href="/css/index/layout.css" type="text/css">
+    <link rel="stylesheet" href="/css/boarding-detail/style.css" type="text/css">
 </head>
 
 <body>
@@ -52,30 +52,30 @@
 
     <!-- kost -->
 <section class="container kost-detail">
-        <img src="/img/boarding/boarding-house.png" alt="">
+        <img src="<%= boarding.image%>" alt="">
         <div class="c-box">
-            <div class="title">Kost Roemah Kita</div>
-            <p>Kost Roemah Kita. Kost putra yang sangat terkenal di Telkom University</p>
+            <div class="title"><%= boarding.names%></div>
+            <p><%= boarding.names%>. <%= boarding.description%></p>
             <div class="title">Fasilitas Kamar</div>
             <ul class="fasil">
-                <li><i class="icon_ac"></i>AC</li>
-                <li><i class="icon_meja"></i>Meja</li>
-                <li><i class="icon_bathtub"></i>Kamar Mandi dlm</li>
-                <li><i class="icon_bed"></i>Kasur</li>
-                <li><i class="icon_lemari"></i>Lemari</li>
-                <li><i class="icon_toilet"></i>Kloset Duduk</li>
+               <% if(boarding.fasilitas.ac){%><li><i class="icon_ac"></i>AC</li><%}%>
+               <% if(boarding.fasilitas.meja){%> <li><i class="icon_meja"></i>Meja</li><%}%>
+                <% if(boarding.fasilitas.kmd){%><li><i class="icon_bathtub"></i>Kamar Mandi dlm</li><%}%>
+                <% if(boarding.fasilitas.kasur){%><li><i class="icon_bed"></i>Kasur</li><%}%>
+                <% if(boarding.fasilitas.lm){%><li><i class="icon_lemari"></i>Lemari</li><%}%>
+                <% if(boarding.fasilitas.kd){%><li><i class="icon_toilet"></i>Kloset Duduk</li><%}%>
             </ul>
             <div class="title">
                 Spesifikasi tipe Kamar
             </div>
             <ul>
-                <li>3.5 x 2.7 meter</li>
-                <li>Kost Campur</li>
+                <li><%= boarding.spesifikasi%></li>
+                <li><%= boarding.type_tempat%></li>
             </ul>
         </div>
         <div class="c-box">
             <div class="title">Location</div>
-            <p>Jl. Sukapura No.26, Sukapura, Kec. Dayeuhkolot, Kabupaten Bandung, Jawa Barat 40267</p>
+            <p><%= boarding.location%></p>
             <div class="btn">
                 <a href="https://www.google.com/maps/dir//Jl.+Raya+Bojongsoang+No.123,+Lengkong,+Kec.+Bojongsoang,+Kabupaten+Bandung,+Jawa+Barat+40288/data=!4m6!4m5!1m1!4e2!1m2!1m1!1s0x2e68e9baa433700b:0x18e74ab262d1fee5?sa=X&ved=2ahUKEwj6tbCt1ZL_AhVy9zgGHdX1BFIQwwV6BAgLEAQ" class="c-primary">VIEW MAPS</a>
                 <a href="https://wa.me/6282299329147" class="c-primary">Contact</a>

@@ -38,6 +38,7 @@ const registerFunc = async (req, res) => {
 const loginFunc = async (req, res) => {
     try {
         const { email, password } = req.body
+
         const authData = await pb.collection('users').authWithPassword(
             email,
             password,
@@ -101,12 +102,41 @@ const boardingGetOne = async (id) => {
     return resultList
 }
 
+const marketFunc = async (id) => {
+    const resultList = await pb.collection('market').getFullList();
+    return resultList
+}
+
 const middleWareContent = (req, res, next) => {
     if (!req.session.isAuth) {
         return res.redirect("login")
     }
 
     next()
+}
+
+const telyuFunc = async() => {
+    const resultList = await pb.collection('telyu').getFullList();
+    return resultList
+}
+
+const telyuGetOne = async (id) => {
+    const resultList = await pb.collection('telyu').getFirstListItem(`id="${id}"`);
+    return resultList
+}
+
+const fadAll = async () => {
+    const resultList = await pb.collection('item_fads').getFullList();
+    return resultList
+}
+
+const fadRatingFunc = async () => {
+    const resultList = await pb.collection('item_fads').getFullList({
+        filter: 'rating >= 4.5',
+        sort:'rating'
+    });
+
+    return resultList
 }
 
 module.exports = {
@@ -117,5 +147,10 @@ module.exports = {
     atmFunc,
     worshipFunc,
     boardingAllFunc,
-    boardingGetOne
+    boardingGetOne,
+    marketFunc,
+    telyuFunc,
+    telyuGetOne,
+    fadRatingFunc,
+    fadAll
 }
