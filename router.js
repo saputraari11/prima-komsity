@@ -129,7 +129,7 @@ router.get("/fad", async (req, res) => {
     const dataOrigin = await api.fadAll()
     const dataRating = await api.fadRatingFunc()
     const randomRating = utils.generateRandom(dataRating.length,10)
-    const randomFood = utils.generateRandom(dataOrigin.length,10)
+    const randomFood = utils.generateRandom(dataOrigin.length,4)
 
     res.render('fad',{
         ratings:dataRating,
@@ -140,12 +140,72 @@ router.get("/fad", async (req, res) => {
     })
 });
 
-router.get("/food", (req, res) => {
-    res.render('food')
+router.get("/food/:type", async (req, res) => {
+    const type = req.params.type
+    let query = ''
+    let title = ''
+    let nickname = ''
+    if(type == 'drink') {
+        query = `type_menu = '${type}'`
+        title = 'Hello,have you had coffee today?'
+        nickname = 'Minuman'
+    } else {
+        switch (type) {
+            case "rice":
+                title = 'Hello, have you eaten?'
+                nickname = 'Aneka Nasi'
+            break;
+
+            case "fast":
+                title = 'The burgers are really good'
+                nickname = 'Fast Food'
+            break;
+            
+            case "asian":
+                title = 'Do you want tteokbokki?'
+                nickname = 'Asian Food'
+            break;
+
+            case "snack":
+                title = 'What snack are you looking for?'
+                nickname = 'Jajanan'
+            break
+        }
+
+        query = `catagory_food:each = '${type}'`
+    }
+
+    const data = await api.fadAll(query)
+    console.log(data);
+
+    res.render('food',{
+        data:data,
+        nickname:nickname,
+        title:title,
+        url:`https://prima-komsity-pb.fly.dev/api/files/item_fads/`,
+    })
 });
 
-router.get("/food-detail/:id", (req, res) => {
-    res.render('food-detail')
+router.get("/food-detail/:id", async (req, res) => {
+    const id = req.params.id
+    const data = await api.fadGetOne(id)
+    res.render('food-detail',{
+        data:data,
+        url:`https://prima-komsity-pb.fly.dev/api/files/fad/`,
+    })
+});
+
+router.get("/menu/:id", async (req, res) => {
+    const id = req.params.id
+    const data = await api.fadGet(id);
+    const item_fads = data.expand["item_fads(fad)"]
+    const food = item_fads.filter(item => item.type_menu == 'food')
+    const drink = item_fads.filter(item => item.type_menu == 'drink')
+    res.render('menu',{
+        food:food,
+        drink:drink,
+        data:data
+    })
 });
 
 router.get("/place", async (req, res) => {

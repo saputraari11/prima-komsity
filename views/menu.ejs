@@ -6,30 +6,30 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Menu</title>
-    <link rel="stylesheet" href="css/index/layout.css">
-    <link rel="stylesheet" href="css/menu/style.css">
+    <link rel="stylesheet" href="/css/index/layout.css">
+    <link rel="stylesheet" href="/css/menu/style.css">
 </head>
 
 <body>
-    <header class="container" style="background-image: url(css/menu/banner.png);" id="page-detail">
+    <header class="container" style="background-image: url(/img/menu/banner.png);" id="page-detail">
         <!-- Navbar -->
         <nav>
             <a href="#" class="logo">
-                <img src="css/img/logo.png" alt="">
+                <img src="/img/logo.png" alt="">
             </a>
             <ul>
-                <li><a href="">Home</a></li>
-                <li><a href="">Food&Drink</a></li>
-                <li><a href="">Market</a></li>
-                <li><a href="">Boarding House</a></li>
-                <li><a href="">Telyu Place</a></li>
+                <li><a href="/dashboard">Home</a></li>
+                <li><a href="/fad">Food&Drink</a></li>
+                <li><a href="/market">Market</a></li>
+                <li><a href="/boarding-house">Boarding House</a></li>
+                <li><a href="/place">Telyu Place</a></li>
                 <li class="oth">
                     <span>Other</span>
                     <ul class="m-oth d-none">
-                        <li><a href="">ATM</a></li>
-                        <li><a href="">Worship Place</a></li>
-                        <li><a href="">Service</a></li>
-                        <li><a href="">About Us</a></li>
+                        <li><a href="/atm">ATM</a></li>
+                        <li><a href="/worship">Worship Place</a></li>
+                        <li><a href="/service">Service</a></li>
+                        <li><a href="/about">About Us</a></li>
                     </ul>
                 </li>
             </ul>
@@ -39,14 +39,14 @@
                     My Account
                 </span>
                 <ul class="d-none m-profile">
-                    <li><a href=""><i class="icon_user2"></i>My Profile</a></li>
-                    <li><a href=""><i class="icon_logout"></i>Logout</a></li>
+                    <li><a href="account"><i class="icon_user2"></i>My Profile</a></li>
+                    <li><a href="/logout?type=DELETE" data-method="delete"><i class="icon_logout"></i>Logout</a></li>
                 </ul>
             </div>
         </nav>
         <!-- Banner -->
         <div class="banner2">
-            <div class="c-white title">Sri Pandita</div>
+            <div class="c-white title"><%= data.names %></div>
         </div>
     </header>
 
@@ -57,39 +57,33 @@
             <i class="icon_jalan"></i>
             <p>
                 Location <br>
-                Depan Gate 2 Telkom University
+            <%= data.location %>
             </p>
         </div>
         <div class="jam">
             <i class="icon_jam"></i>
             <p>
                 Open - Close <br>
-                12.00 pm - 18.00 pm
+            <%= data.time %>
             </p>
         </div>
        </div>
-        <div class="heading1" style="text-align: center;">Sri Pandita Menu</div>
+        <div class="heading1" style="text-align: center;"><%= data.names %></div>
        <div class="d-menu">
         <div class="box">
             <div class="heading1">ANEKA MAKANAN</div>
             <ul>
-                <li>Indomie Rebus</li>
-                <li>Indomie Rebus</li>
-                <li>Indomie Rebus</li>
-                <li>Indomie Rebus</li>
-                <li>Indomie Rebus</li>
-                <li>Indomie Rebus</li>
+                <% food.forEach((item) => {%>
+                    <li><%= item.name %></li>
+                <% }) %>    
             </ul>
            </div>
            <div class="box">
             <div class="heading1">ANEKA MINUMAN</div>
             <ul>
-                <li>Kopi</li>
-                <li>Kopi</li>
-                <li>Kopi</li>
-                <li>Kopi</li>
-                <li>Kopi</li>
-            </ul>
+                <% drink.forEach((item) => {%>
+                    <li><%= item.name %></li>
+                <% }) %>           </ul>
            </div>
        </div>
     </section>
@@ -97,7 +91,7 @@
     <!-- footer -->
     <footer class="container c-primary">
         <div class="f-left">
-            <img src="css/img/logo-footer.png" alt="" class="logo-footer">
+            <img src="/img/index/logo-footer.png" alt="" class="logo-footer">
             <p>
                 Jl.Telekomunasi 1
                 terusan buah batu

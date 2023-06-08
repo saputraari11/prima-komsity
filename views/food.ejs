@@ -7,30 +7,30 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Food</title>
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.css" />
-    <link rel="stylesheet" href="css/index/layout.css">
-    <link rel="stylesheet" href="css/food/style.css">
+    <link rel="stylesheet" href="/css/index/layout.css">
+    <link rel="stylesheet" href="/css/food/style.css">
 </head>
 
 <body>
-    <header class="container" style="background-image: url(css/food/banner.png);" id="page-detail">
+    <header class="container" style="background-image: url(/img/food/banner.png);" id="page-detail">
         <!-- Navbar -->
         <nav>
             <a href="#" class="logo">
-                <img src="css/img/logo.png" alt="">
+                <img src="/img/logo.png" alt="">
             </a>
             <ul>
-                <li><a href="">Home</a></li>
-                <li><a href="">Food&Drink</a></li>
-                <li><a href="">Market</a></li>
-                <li><a href="">Boarding House</a></li>
-                <li><a href="">Telyu Place</a></li>
+                <li><a href="/dashboard">Home</a></li>
+                <li><a href="/fad">Food&Drink</a></li>
+                <li><a href="/market">Market</a></li>
+                <li><a href="/boarding-house">Boarding House</a></li>
+                <li><a href="/place">Telyu Place</a></li>
                 <li class="oth">
                     <span>Other</span>
                     <ul class="m-oth d-none">
-                        <li><a href="">ATM</a></li>
-                        <li><a href="">Worship Place</a></li>
-                        <li><a href="">Service</a></li>
-                        <li><a href="">About Us</a></li>
+                        <li><a href="/atm">ATM</a></li>
+                        <li><a href="/worship">Worship Place</a></li>
+                        <li><a href="/service">Service</a></li>
+                        <li><a href="/about">About Us</a></li>
                     </ul>
                 </li>
             </ul>
@@ -40,20 +40,20 @@
                     My Account
                 </span>
                 <ul class="d-none m-profile">
-                    <li><a href=""><i class="icon_user2"></i>My Profile</a></li>
-                    <li><a href=""><i class="icon_logout"></i>Logout</a></li>
+                    <li><a href="account"><i class="icon_user2"></i>My Profile</a></li>
+                    <li><a href="/logout?type=DELETE" data-method="delete"><i class="icon_logout"></i>Logout</a></li>
                 </ul>
             </div>
         </nav>
         <!-- Banner -->
         <div class="banner2">
-            <div class="c-white title">Aneka Nasi</div>
+            <div class="c-white title"><%= nickname %></div>
         </div>
     </header>
 
     <!-- food -->
     <section class="container food2">
-        <div class="heading1">Hello, have you eaten?</div>   
+        <div class="heading1"><%= title %></div>   
             <form action="" class="search">
                 <div class="group">
                     <i class="icon_search"></i>
@@ -61,48 +61,15 @@
                 </div>
             </form>
             <div class="c-box">
-                <div class="box">
-                    <img src="css/food/ayam.png" alt="">
-                    <div class="text">
-                        <div class="title">Ayam Goreng</div>
-                        <a href="">View Detail</a>
+                <% data.forEach((item) => {%>
+                    <div class="box">
+                        <img src="<%= url+item.id+'/'+item.image %>" alt="">
+                        <div class="text">
+                            <div class="title"><%= item.name %></div>
+                            <a href="<%= '../food-detail/'+ item.id%>">View Detail</a>
+                        </div>
                     </div>
-                </div>
-                <div class="box">
-                    <img src="css/food/ayam.png" alt="">
-                    <div class="text">
-                        <div class="title">Ayam Goreng</div>
-                        <a href="">View Detail</a>
-                    </div>
-                </div>
-                <div class="box">
-                    <img src="css/food/ayam.png" alt="">
-                    <div class="text">
-                        <div class="title">Ayam Goreng</div>
-                        <a href="">View Detail</a>
-                    </div>
-                </div>
-                <div class="box">
-                    <img src="css/food/ayam.png" alt="">
-                    <div class="text">
-                        <div class="title">Ayam Goreng</div>
-                        <a href="">View Detail</a>
-                    </div>
-                </div>
-                <div class="box">
-                    <img src="css/food/ayam.png" alt="">
-                    <div class="text">
-                        <div class="title">Ayam Goreng</div>
-                        <a href="">View Detail</a>
-                    </div>
-                </div>
-                <div class="box">
-                    <img src="css/food/ayam.png" alt="">
-                    <div class="text">
-                        <div class="title">Ayam Goreng</div>
-                        <a href="">View Detail</a>
-                    </div>
-                </div>
+                <% }) %>              
             </div>
     </section>
 

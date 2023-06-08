@@ -6,30 +6,30 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Food</title>
-    <link rel="stylesheet" href="css/food-detail/style.css">
-    <link rel="stylesheet" href="css/index/layout.css">
+    <link rel="stylesheet" href="/css/food-detail/style.css">
+    <link rel="stylesheet" href="/css/index/layout.css">
 </head>
 
 <body>
-    <header class="container" style="background-image: url(img/food-detail/banner.png);" id="page-detail">
+    <header class="container" style="background-image: url(/img/food-and-drink/banner.png);" id="page-detail">
         <!-- Navbar -->
         <nav>
             <a href="#" class="logo">
-                <img src="img/index/logo.png" alt="">
+                <img src="/img/logo.png" alt="">
             </a>
             <ul>
-                <li><a href="">Home</a></li>
-                <li><a href="">Food&Drink</a></li>
-                <li><a href="">Market</a></li>
-                <li><a href="">Boarding House</a></li>
-                <li><a href="">Telyu Place</a></li>
+                <li><a href="/dashboard">Home</a></li>
+                <li><a href="/fad">Food&Drink</a></li>
+                <li><a href="/market">Market</a></li>
+                <li><a href="/boarding-house">Boarding House</a></li>
+                <li><a href="/place">Telyu Place</a></li>
                 <li class="oth">
                     <span>Other</span>
                     <ul class="m-oth d-none">
-                        <li><a href="">ATM</a></li>
-                        <li><a href="">Worship Place</a></li>
-                        <li><a href="">Service</a></li>
-                        <li><a href="">About Us</a></li>
+                        <li><a href="/atm">ATM</a></li>
+                        <li><a href="/worship">Worship Place</a></li>
+                        <li><a href="/service">Service</a></li>
+                        <li><a href="/about">About Us</a></li>
                     </ul>
                 </li>
             </ul>
@@ -39,29 +39,25 @@
                     My Account
                 </span>
                 <ul class="d-none m-profile">
-                    <li><a href=""><i class="icon_user2"></i>My Profile</a></li>
-                    <li><a href=""><i class="icon_logout"></i>Logout</a></li>
+                    <li><a href="account"><i class="icon_user2"></i>My Profile</a></li>
+                    <li><a href="/logout?type=DELETE" data-method="delete"><i class="icon_logout"></i>Logout</a></li>
                 </ul>
             </div>
         </nav>
         <!-- Banner -->
-        <div class="banner2">
-            <div class="c-white title">Sri Pandita</div>
+        <div class="banner">
+            <h1 class="c-white">Food And Drink</h1>
         </div>
     </header>
 
     <!-- food -->
     <section class="container d-food">
        <div class="left">
-            <img src="img/detail-food/gedung.png" alt="">
+            <img src="<%= url + data.expand.fad.id + '/' + data.expand.fad.images %>" alt="">
             <div class="text">
-                <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Porro neque quas necessitatibus fugit, alias distinctio at! Deserunt natus officiis, cumque ipsum cum exercitationem repudiandae voluptatem voluptates quis a reprehenderit id!
-                </p>
+                <p><%= data.expand.fad.description %></p>
                 <br>
-                <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Porro neque quas necessitatibus fugit, alias distinctio at! Deserunt natus officiis, cumque ipsum cum exercitationem repudiandae voluptatem voluptates quis a reprehenderit id!
-                </p>
-                <br>
-                <a href="menu.html">See Menu &nbsp; ></a>
+                <a href="<%= '../menu/' + data.expand.fad.id %>">See Menu &nbsp; ></a>
             </div>
        </div>
        <div class="right">
@@ -69,17 +65,17 @@
             <i class="icon_jam"></i>
             <p>
                 Open - Close <br>
-                12.00 pm - 18.00 pm
+            <%= data.expand.fad.time %>
             </p>
         </div>
         <div class="lokasi">
             <i class="icon_jalan"></i>
             <p>
                 Location <br>
-                Depan Gate 2 Telkom University
+            <%= data.expand.fad.location %>
             </p>
         </div>
-        <a href="" class="c-primary">View Maps</a>
+        <a href="<%= data.expand.fad.maps %>" class="c-primary">View Maps</a>
        </div>
     </section>
 

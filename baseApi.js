@@ -125,8 +125,37 @@ const telyuGetOne = async (id) => {
     return resultList
 }
 
-const fadAll = async () => {
-    const resultList = await pb.collection('item_fads').getFullList();
+const fadAll = async (query='') => {
+    let resultList = await pb.collection('item_fads').getFullList();
+    if(query != '') {
+        resultList = await pb.collection('item_fads').getFullList(
+            {
+                filter:query
+            }
+        );
+    }
+    return resultList
+}
+
+const fadGetOne = async (id) => {
+    const resultList = await pb.collection('item_fads').getFirstListItem(
+        `id="${id}"`,
+        {
+            expand:["fad"]
+        }
+    )
+
+    return resultList
+}
+
+const fadGet = async (id) => {
+    const resultList = await pb.collection('fad').getFirstListItem(
+        `id="${id}"`,
+        {
+            expand:["item_fads(fad)"]
+        }
+    )
+
     return resultList
 }
 
@@ -152,5 +181,7 @@ module.exports = {
     telyuFunc,
     telyuGetOne,
     fadRatingFunc,
-    fadAll
+    fadAll,
+    fadGetOne,
+    fadGet
 }

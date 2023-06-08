@@ -66,44 +66,44 @@
                 Menu Category
             </div>
             <div class="c-box">
-                <div class="box">
+                <div class="box" onclick="window.location='food/rice'">
                     <div class="img">
                         <img src="img/food-and-drink/nasi.png" alt="">
                     </div>
-                    <div class="title">
+                    <div class="title"  >
                         Aneka Nasi
                     </div>
                 </div>
-                <div class="box">
+                <div class="box" onclick="window.location='food/drink'">
                     <div class="img">
                         <img src="img/food-and-drink/nasi.png" alt="">
                     </div>
                     <div class="title">
-                        Aneka Nasi
+                        Minuman
                     </div>
                 </div>
-                <div class="box">
+                <div class="box" onclick="window.location='food/snack'">
                     <div class="img">
                         <img src="img/food-and-drink/nasi.png" alt="">
                     </div>
                     <div class="title">
-                        Aneka Nasi
+                        Jajanan
                     </div>
                 </div>
-                <div class="box">
+                <div class="box" onclick="window.location='food/asian'">
                     <div class="img">
                         <img src="img/food-and-drink/nasi.png" alt="">
                     </div>
                     <div class="title">
-                        Aneka Nasi
+                        Asian Food
                     </div>
                 </div>
-                <div class="box">
+                <div class="box" onclick="window.location='food/fast'">
                     <div class="img">
                         <img src="img/food-and-drink/nasi.png" alt="">
                     </div>
                     <div class="title">
-                        Aneka Nasi
+                        Fast Food
                     </div>
                 </div>
             </div>
@@ -122,11 +122,11 @@
                         <%= data[foodId].price %>
                     </div>
                     <div class="btn">
-                        <a href="food-detail.html">See Detail</a>
+                        <a href="<%= '../food-detail/'+ data[foodId].id%>">See Detail</a>
                         <div class="swipe">></div>
                     </div>
                 </div>
-            <% }) %>
+            <% }) %> -->
             </div>
             <div class="rekomend">
                 <div class="heading1">Rekomended</div>
